@@ -15,6 +15,16 @@ st.title('Fraud Detection App')
 
 st.header('Enter transaction details')
 
+# Explanation for each input
+st.markdown('**Step**: Time step of the transaction')
+st.markdown('**Amount**: Transaction amount')
+st.markdown('**Old Balance Orig**: Sender\'s account balance before transaction')
+st.markdown('**New Balance Orig**: Sender\'s account balance after transaction')
+st.markdown('**Old Balance Dest**: Receiver\'s account balance before transaction')
+st.markdown('**New Balance Dest**: Receiver\'s account balance after transaction')
+st.markdown('**Type CASH_OUT**: Check if transaction involves cash out (tick if yes)')
+st.markdown('**Type TRANSFER**: Check if transaction involves transfer (tick if yes)')
+
 # Collect user input
 step = st.number_input('Step', min_value=0, value=0)
 amount = st.number_input('Amount', min_value=0.0, value=0.0)
@@ -22,8 +32,6 @@ oldbalanceOrg = st.number_input('Old Balance Orig', min_value=0.0, value=0.0)
 newbalanceOrig = st.number_input('New Balance Orig', min_value=0.0, value=0.0)
 oldbalanceDest = st.number_input('Old Balance Dest', min_value=0.0, value=0.0)
 newbalanceDest = st.number_input('New Balance Dest', min_value=0.0, value=0.0)
-
-# Categorical variables
 type_CASH_OUT = st.checkbox('Type: CASH_OUT')
 type_TRANSFER = st.checkbox('Type: TRANSFER')
 
